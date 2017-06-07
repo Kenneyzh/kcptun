@@ -34,6 +34,7 @@ function save(){
 	Apps.kcptun_mode = E('_kcptun_mode').value;
 	Apps.kcptun_nocomp = E('_kcptun_nocomp').value;
 	Apps.kcptun_conn = E('_kcptun_conn').value;
+	Apps.kcptun_crypt = E('_kcptun_crypt').value;
 	if(Apps.kcptun_serverip == "" || Apps.kcptun_serverport == "" || Apps.kcptun_lport == ""){
 		alert("信息填写不完整，请检查后再提交！");
 		return false;
@@ -79,6 +80,7 @@ function save(){
 <script type="text/javascript">
 var option_mode = [['fast2', 'fast2'], ['fast', 'fast'], ['fast3', 'fast3'], ['normal', 'normal'], ['default', 'default']];
 var nocomp_mode = [['false', '禁用'], ['true', '启用']];
+var crypt_mode = [['aes', 'aes'], ['aes-128', 'aes-128'], ['aes-192', 'aes-192'], ['none', 'none'], ['blowfish', 'blowfish'], ['twofish', 'twofish'], ['salsa20', 'salsa20'], ['cast5', 'cast5'], ['3des', '3des'], ['tea', 'tea'], ['xtea', 'xtea'], ['xor', 'xor']];
 $('#kcptun-fields').forms([
 { title: '开启kcptun', name: 'kcptun_enable', type: 'checkbox', value: ((Apps.kcptun_enable == '1')? 1:0)},
 { title: '运行状态', name: 'kcptun_last_act', text: Apps.kcptun_last_act ||'--' },
@@ -86,6 +88,7 @@ $('#kcptun-fields').forms([
 { title: '服务器地址', name: 'kcptun_serverip', type: 'text', maxlen: 34, size: 36, value: Apps.kcptun_serverip },
 { title: '服务器端口', name: 'kcptun_serverport', type: 'text', maxlen: 5, size: 6, value:Apps.kcptun_serverport },
 { title: '密码', name: 'kcptun_key', type: 'text', maxlen: 32, size: 34, value: Apps.kcptun_key },
+{ title: '加密方式', name: 'kcptun_crypt', type: 'select', options:crypt_mode, value: Apps.kcptun_crypt || 'aes' },
 { title: '模式', name: 'kcptun_mode', type: 'select', options:option_mode, value: Apps.kcptun_mode || 'fast2' },
 { title: 'nocomp', name: 'kcptun_nocomp', type: 'select', options:nocomp_mode, value: Apps.kcptun_nocomp || 'false' },
 { title: 'MTU', name: 'kcptun_mtu', type: 'text', maxlen: 10, size: 10, value: Apps.kcptun_mtu || '1400' },

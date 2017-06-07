@@ -5,7 +5,7 @@ source $KSROOT/scripts/base.sh
 eval `dbus export kcptun_`
 
 start_kcptun(){
-    arg="-l :$kcptun_lport -r $kcptun_serverip:$kcptun_serverport -key $kcptun_key -mtu $kcptun_mtu -sndwnd $kcptun_sndwnd -rcvwnd $kcptun_rcvwnd -mode $kcptun_mode --conn $kcptun_conn"
+    arg="-l :$kcptun_lport -r $kcptun_serverip:$kcptun_serverport --crypt $kcptun_crypt --key $kcptun_key --mtu $kcptun_mtu --sndwnd $kcptun_sndwnd --rcvwnd $kcptun_rcvwnd --mode $kcptun_mode --conn $kcptun_conn"
     if [ $kcptun_nocomp == "true" ];then
         arg="$arg --nocomp"
     fi

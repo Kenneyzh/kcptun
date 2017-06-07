@@ -1,8 +1,8 @@
 {
-    "build_date": "2017-06-07 10:47:20", 
+    "build_date": "2017-06-07 15:13:48", 
     "description": "Kcptun加速", 
     "home_url": "Module_kcptun.asp", 
-    "md5": "3787e75995c9d7ab9ef73d582bc8a514", 
+    "md5": "3c75d69a94a6cd10dafc94c297e562fe", 
     "module": "kcptun", 
     "name": "kcptun", 
     "tar_url": "kcptun/kcptun.tar.gz", 
